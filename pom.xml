@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ebremer</groupId>
+    <artifactId>RO-Crate4J</artifactId>
+    <name>RO-Crate4J</name>
+    
+    <description>Library for creating and manipulating RO-Crate files</description>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/ebremer/RO-Crate4J/issues</url>
+    </issueManagement>
+    
+    <developers>
+        <developer>
+          <id>ebremer</id>
+          <name>Erich Bremer</name>
+          <email>erich.bremer@stonybrook.edu</email>
+          <roles>
+              <role>author</role>
+          </roles>
+        </developer>
+    </developers>
+    
+    <inceptionYear>2021</inceptionYear>
+    
+    <version>0.0.0</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <jena.ver>4.6.1</jena.ver>
+        <zip4j.ver>2.11.3</zip4j.ver>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <type>pom</type>
+            <version>${jena.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-querybuilder</artifactId>
+            <version>${jena.ver}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>${zip4j.ver}</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>halcyon-releases</id>
+            <name>Halcyon</name>
+            <url>http://cursus.bmi.stonybrookmedicine.edu/releases</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>halcyon</id>
+            <url>https://cursus.bmi.stonybrookmedicine.edu/releases</url>
+        </repository>
+    </distributionManagement>
+</project>
