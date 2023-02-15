@@ -44,7 +44,7 @@ public class FolderWriter extends Writer {
 
     @Override
     public void Add(String name, InputStream is, CompressionMethod method) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override

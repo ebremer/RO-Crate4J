@@ -22,19 +22,19 @@ import net.lingala.zip4j.model.enums.CompressionMethod;
  *
  * @author erich
  */
-public class ZipWriter2 extends Writer {
+public class ZipWriter extends Writer {
     private OutputStream fos;
     private ZipOutputStream zos;
     private byte[] buff = new byte[4096];
     
-    public ZipWriter2(File file)  {
+    public ZipWriter(File file)  {
         try {
             fos = new FileOutputStream(file);
             zos = new ZipOutputStream(fos);           
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ZipWriter2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ZipWriter2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -46,7 +46,7 @@ public class ZipWriter2 extends Writer {
     
     @Override
     public void Add(String name, InputStream is, CompressionMethod method) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
     @Override
@@ -61,7 +61,7 @@ public class ZipWriter2 extends Writer {
         try {
             zos.putNextEntry(params);
         } catch (IOException ex) {
-            Logger.getLogger(ZipWriter2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
         }
         return zos;
     }
@@ -84,7 +84,7 @@ public class ZipWriter2 extends Writer {
             FileHeader fh = zos.closeEntry();
             fh.setUncompressedSize(c);
         } catch (IOException ex) {
-            Logger.getLogger(ZipWriter2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -93,7 +93,7 @@ public class ZipWriter2 extends Writer {
         try {
             zos.close();
         } catch (IOException ex) {
-            Logger.getLogger(ZipWriter2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

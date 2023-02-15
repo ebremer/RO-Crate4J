@@ -66,9 +66,4 @@ public class ZipReader extends Reader {
         }
         return null;
     }
-    
-    public static void main(String[] args) throws IOException {
-        File file = new File("D:\\nlms2\\halcyon\\x.zip");
-        ZipReader zip = new ZipReader(file);
-    }
 }
