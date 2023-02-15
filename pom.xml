@@ -5,9 +5,7 @@
     <artifactId>RO-Crate4J</artifactId>
     <name>RO-Crate4J</name>
     
-    <description>
-        Library for creating and manipulating RO-Crate files
-    </description>
+    <description>Library for creating and manipulating RO-Crate files</description>
     
     <licenses>
         <license>
@@ -62,4 +60,17 @@
             <version>${zip4j.ver}</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>halcyon-releases</id>
+            <name>Halcyon</name>
+            <url>http://cursus.bmi.stonybrookmedicine.edu/releases</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>halcyon</id>
+            <url>http://cursus.bmi.stonybrookmedicine.edu/releases</url>
+        </repository>
+    </distributionManagement>
 </project>
