@@ -1,7 +1,3 @@
-/*
- * Erich Bremer
- * RO-Crate
- */
 package com.ebremer.rocrate4j;
 
 import com.ebremer.rocrate4j.writers.Writer;

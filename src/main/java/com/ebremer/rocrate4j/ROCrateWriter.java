@@ -1,7 +1,3 @@
-/*
- * Erich Bremer
- * RO-Crate
- */
 package com.ebremer.rocrate4j;
 
 import static com.ebremer.rocrate4j.ROCrate.MANIFEST;
