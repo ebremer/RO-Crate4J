@@ -32,13 +32,13 @@
     
     <inceptionYear>2021</inceptionYear>
     
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <jena.ver>4.6.1</jena.ver>
+        <jena.ver>4.8.0</jena.ver>
         <zip4j.ver>2.11.5</zip4j.ver>
     </properties>
     

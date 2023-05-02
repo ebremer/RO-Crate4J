@@ -69,7 +69,7 @@ public class SubFileSeekableByteChannel implements SeekableByteChannel {
 
     @Override
     public void close() throws IOException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // don't do anything as this is a subchannel
     }
 
     @Override
