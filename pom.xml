@@ -32,7 +32,7 @@
     
     <inceptionYear>2021</inceptionYear>
     
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +41,6 @@
         <jena.ver>4.8.0</jena.ver>
         <zip4j.ver>2.11.5</zip4j.ver>
     </properties>
-    
     <build>
         <plugins>
             <plugin>
@@ -50,13 +49,11 @@
                 <version>3.11.0</version>
                 <configuration>
                     <compilerArgs>
-                        <arg>--enable-preview</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    
     <dependencies>
         <dependency>
             <groupId>org.apache.jena</groupId>
