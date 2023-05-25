@@ -1,0 +1,140 @@
+@prefix bg:      <https://www.ebremer.com/beakgraph/ns/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix exif:    <http://www.w3.org/2003/12/exif/ns#> .
+@prefix geo:     <http://www.opengis.net/ont/geosparql#> .
+@prefix hal:     <https://www.ebremer.com/halcyon/ns/> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sno:     <http://snomed.info/id/> .
+@prefix so:      <https://schema.org/> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix xmls:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:md5:a923c8367e61792f531e65d966d4cb78>
+        a            so:ImageObject;
+        exif:height  "82984"^^xmls:int;
+        exif:width   "112231"^^xmls:int .
+
+<void>  a                       void:Dataset;
+        void:classPartition     [ void:class     sno:48512009;
+                                  void:entities  "28"^^xmls:long
+                                ];
+        void:classPartition     [ void:class     geo:FeatureCollection;
+                                  void:entities  "1"^^xmls:long
+                                ];
+        void:classPartition     [ void:class     hal:Grid;
+                                  void:entities  "1"^^xmls:long
+                                ];
+        void:classPartition     [ void:class     hal:Segmentation;
+                                  void:entities  "1"^^xmls:long
+                                ];
+        void:classPartition     [ void:class     so:ImageObject;
+                                  void:entities  "1"^^xmls:long
+                                ];
+        void:classPartition     [ void:class     geo:Feature;
+                                  void:entities  "28"^^xmls:long
+                                ];
+        void:classes            "6"^^xmls:long;
+        void:distinctObjects    "75"^^xmls:long;
+        void:distinctSubjects   "97"^^xmls:long;
+        void:properties         "20"^^xmls:long;
+        void:propertyPartition  [ void:property  dcterms:references;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:classification;
+                                  void:triples   "112"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  geo:asWKT;
+                                  void:triples   "112"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:publisher;
+                                  void:triples   "2"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:creator;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:description;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:date;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:contributor;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:hasProbability;
+                                  void:triples   "112"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:tileSizeY;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:title;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  dcterms:source;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>;
+                                  void:triples   "228"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  exif:width;
+                                  void:triples   "11"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:tileSizeX;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  geo:hasGeometry;
+                                  void:triples   "112"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:hasClassification;
+                                  void:triples   "1"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:scale;
+                                  void:triples   "9"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  exif:height;
+                                  void:triples   "11"^^xmls:long
+                                ];
+        void:propertyPartition  [ void:property  hal:scaleIndex;
+                                  void:triples   "9"^^xmls:long
+                                ];
+        void:subset             <halcyon>;
+        void:triples            "728"^^xmls:long .
+
+[ a              so:CreateAction;
+  so:instrument  <https://github.com/SBU-BMI/quip_cnn_segmentation/releases/tag/v1.1>;
+  so:name        "cnn-nuclear-segmentations-2019";
+  so:object      <urn:md5:a923c8367e61792f531e65d966d4cb78>;
+  so:result      <halcyon>
+] .
+
+<>
+        a                    so:Dataset;
+        so:ScholarlyArticle  "https://doi.org/10.1038/s41597-020-0528-1";
+        so:contributor       "http://orcid.org/0000-0003-0223-1059";
+        so:datePublished     "2023-10-10T11:12:54.951808800Z"^^xmls:dateTime;
+        so:description       "Nuclear segmentation of TCGA cancer types";
+        so:hasPart           <halcyon> , <void>;
+        so:hasPart           [ a                      geo:FeatureCollection;
+                               rdfs:member            <halcyon>;
+                               dcterms:contributor    "http://orcid.org/0000-0003-0223-1059";
+                               dcterms:creator        <https://github.com/SBU-BMI/quip_cnn_segmentation/releases/tag/v1.1>;
+                               dcterms:date           "2023-10-10T11:12:54.951808800Z"^^xmls:dateTime;
+                               dcterms:description    "Nuclear segmentation of TCGA cancer types";
+                               dcterms:publisher      <https://ror.org/05qghxh33> , <https://ror.org/01882y777>;
+                               dcterms:references     "https://doi.org/10.1038/s41597-020-0528-1";
+                               dcterms:source         <urn:md5:a923c8367e61792f531e65d966d4cb78>;
+                               dcterms:title          "cnn-nuclear-segmentations-2019";
+                               hal:hasClassification  sno:48512009
+                             ];
+        so:name              "cnn-nuclear-segmentations-2019";
+        so:publisher         <https://ror.org/01882y777> , <https://ror.org/05qghxh33> .
+
+<halcyon>  a        bg:BeakGraph;
+        so:hasPart  <halcyon/dictionary.arrow> , <halcyon/4e92629a-5207-47c7-bf81-fcb99e29c787.arrow> , <halcyon/cd04e4c0-b227-4493-9a19-912635bd7ef4.arrow> , <halcyon/59467beb-6176-418a-a4a3-335fb155fbae.arrow> , <halcyon/55689ce0-a297-4115-a8b4-383a420dc93a.arrow> , <halcyon/1f1a6e00-f5be-4120-bd23-5f8b318b9794.arrow> , <halcyon/c3e356a2-07ec-4a0c-9ecf-1710f7e7ddd4.arrow> , <halcyon/32d96878-c2ea-4769-adef-0523dcf53056.arrow> , <halcyon/bebf3a29-2aa4-40d1-b343-bd044e4cccb0.arrow> , <halcyon/cb7e4632-8e63-40b5-90cf-14dfa9b20dcc.arrow> , <halcyon/aeb60579-4e34-4c0b-adcf-0218b0371f4a.arrow> , <halcyon/namedgraphs.arrow> , <halcyon/329c6e48-b61e-4643-96ef-1c39111d6563.arrow> , <halcyon/b38ad232-1959-4980-9743-b67505c8349a.arrow> , <halcyon/b3949946-7867-4c54-838c-7d01e3a894d5.arrow> , <halcyon/a4829fbc-b0d3-4012-a9a2-5128ec2771e2.arrow> , <halcyon/9645fd4a-42be-46ed-bbf3-4d48c50807cb.arrow> , <halcyon/fc6dba4c-91a5-419b-bdcc-3bc00dbf68fb.arrow> , <halcyon/84252adf-8f56-4d25-ac96-64f930787a09.arrow> , <halcyon/0ac047c7-579e-4665-998e-ad367a1d2d01.arrow> , <halcyon/13ce63f3-d06d-481e-9ad5-7ef030c7b4bf.arrow> .
+
+<ro-crate-metadata.json>
+        a                   so:CreativeWork;
+        dcterms:conformsTo  <https://w3id.org/ro/crate/1.1>;
+        so:about            <http://e0d3c2a6-1519-461b-97f9-2e347ad8f6ec.com> .

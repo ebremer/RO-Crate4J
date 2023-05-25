@@ -32,7 +32,7 @@ import org.apache.jena.update.UpdateRequest;
  *
  * @author erich
  */
-public final class ROCrateReader {
+public final class ROCrateReader implements AutoCloseable {
     private final Model manifest;
     private final Reader reader;
     private final String ref;
@@ -54,13 +54,15 @@ public final class ROCrateReader {
                 throw new Error("UNSUPPORTED "+uri.toString());
         }
         String xx = FixURI(uri.toString());
-        //System.out.println("XX : "+xx);
         if (!xx.startsWith("file://")) {
             xx = "file:///"+ xx.substring("file:/".length());
         }
-        //System.out.println("XY : "+xx);
         ref = xx;
         manifest = LoadManifest();
+    }
+    
+    public String getRef() {
+        return ref;
     }
     
     public String FixURI(String uri) {
@@ -70,6 +72,11 @@ public final class ROCrateReader {
         return hold;
     }
     
+    public boolean hasManifest() {
+        return reader.hasManifest();
+    }
+    
+    @Override
     public void close() {
         reader.close();
     }
