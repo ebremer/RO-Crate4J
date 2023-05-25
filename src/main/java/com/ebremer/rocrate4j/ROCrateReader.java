@@ -32,7 +32,7 @@ import org.apache.jena.update.UpdateRequest;
  *
  * @author erich
  */
-public final class ROCrateReader {
+public final class ROCrateReader implements AutoCloseable {
     private final Model manifest;
     private final Reader reader;
     private final String ref;
@@ -70,6 +70,7 @@ public final class ROCrateReader {
         return hold;
     }
     
+    @Override
     public void close() {
         reader.close();
     }
