@@ -4,6 +4,7 @@
  */
 package com.ebremer.rocrate4j.readers;
 
+import com.ebremer.rocrate4j.ROCrate;
 import com.ebremer.rocrate4j.SubFileSeekableByteChannel;
 import java.io.File;
 import java.io.FileInputStream;
@@ -65,5 +66,10 @@ public class ZipReader extends Reader {
             Logger.getLogger(ZipReader.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    @Override
+    boolean HasManifest() {
+        return inventory.containsKey(ROCrate.MANIFEST);
     }
 }

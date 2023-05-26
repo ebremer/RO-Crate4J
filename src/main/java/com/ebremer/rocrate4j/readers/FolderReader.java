@@ -1,5 +1,6 @@
 package com.ebremer.rocrate4j.readers;
 
+import com.ebremer.rocrate4j.ROCrate;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -49,5 +50,10 @@ public class FolderReader extends Reader {
             Logger.getLogger(FolderReader.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    @Override
+    boolean HasManifest() {
+        return Path.of(base.toString(),ROCrate.MANIFEST).toFile().exists();
     }
 }
