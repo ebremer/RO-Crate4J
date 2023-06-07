@@ -49,7 +49,6 @@ public class ZipReader extends Reader {
     @Override
     public SeekableByteChannel Retrieve(String name) {
         String t = name.substring(len);
-        System.out.println("Retrieve --> "+t+"   "+name);
         ZipArchiveEntry zae = inventory.get(t);
         try {
             return new SubFileSeekableByteChannel(fis, zae.getDataOffset(), zae.getSize());
@@ -69,7 +68,7 @@ public class ZipReader extends Reader {
     }
 
     @Override
-    boolean HasManifest() {
+    public boolean hasManifest() {
         return inventory.containsKey(ROCrate.MANIFEST);
     }
 }

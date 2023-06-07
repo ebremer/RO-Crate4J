@@ -53,7 +53,7 @@ public class FolderReader extends Reader {
     }
 
     @Override
-    boolean HasManifest() {
+    public boolean hasManifest() {
         return Path.of(base.toString(),ROCrate.MANIFEST).toFile().exists();
     }
 }

@@ -11,5 +11,5 @@ public abstract class Reader {
     abstract public void close();
     abstract public SeekableByteChannel Retrieve(String name);
     abstract public InputStream getInputStream(String name);
-    abstract boolean HasManifest();
+    abstract public boolean hasManifest();
 }
