@@ -54,11 +54,9 @@ public final class ROCrateReader implements AutoCloseable {
                 throw new Error("UNSUPPORTED "+uri.toString());
         }
         String xx = FixURI(uri.toString());
-        //System.out.println("XX : "+xx);
         if (!xx.startsWith("file://")) {
             xx = "file:///"+ xx.substring("file:/".length());
         }
-        //System.out.println("XY : "+xx);
         ref = xx;
         manifest = LoadManifest();
     }
@@ -68,6 +66,10 @@ public final class ROCrateReader implements AutoCloseable {
                 .replace("file:/C:/", "file:///C:/")
                 .replace("file:/D:/", "file:///D:/");
         return hold;
+    }
+    
+    public boolean hasManifest() {
+        return reader.hasManifest();
     }
     
     @Override
@@ -88,6 +90,7 @@ public final class ROCrateReader implements AutoCloseable {
     }
 
     private Model LoadManifest() {
+        
         Model m = null;
         InputStream inputStream = reader.getInputStream(ROCrate.MANIFEST);
         try {
