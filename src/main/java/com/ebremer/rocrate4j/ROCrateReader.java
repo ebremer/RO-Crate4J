@@ -94,6 +94,7 @@ public final class ROCrateReader implements AutoCloseable {
     }
 
     private Model LoadManifest() {
+        
         Model m = null;
         InputStream inputStream = reader.getInputStream(ROCrate.MANIFEST);
         try {
