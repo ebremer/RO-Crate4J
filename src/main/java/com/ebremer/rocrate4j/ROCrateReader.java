@@ -61,6 +61,10 @@ public final class ROCrateReader implements AutoCloseable {
         manifest = LoadManifest();
     }
     
+    public String getRef() {
+        return ref;
+    }
+    
     public String FixURI(String uri) {
         String hold = uri
                 .replace("file:/C:/", "file:///C:/")

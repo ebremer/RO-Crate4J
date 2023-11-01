@@ -11,6 +11,7 @@ import org.apache.jena.rdf.model.ResourceFactory;
  */
 public class ROCrate {
     public static String MANIFEST = "ro-crate-metadata.json";
+    public static String MANIFESTTTL = "ro-crate-metadata.ttl";
     public static Resource ROCSpec11 = ResourceFactory.createProperty("https://w3id.org/ro/crate/1.1");
     
     private ROCrate(ROCrateBuilder builder) {

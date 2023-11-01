@@ -60,4 +60,9 @@ public class FolderWriter extends Writer {
         }
         return null;
     }
+
+    @Override
+    public void Add(String name, File file, CompressionMethod method) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

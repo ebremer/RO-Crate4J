@@ -4,8 +4,10 @@
  */
 package com.ebremer.rocrate4j.writers;
 
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,7 +34,7 @@ public class ZipWriter extends Writer {
             file.getParentFile().mkdirs();
         }
         try {
-            fos = new FileOutputStream(file);
+            fos = new BufferedOutputStream(new FileOutputStream(file));
             zos = new ZipOutputStream(fos);           
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
@@ -52,12 +54,6 @@ public class ZipWriter extends Writer {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    /**
-     *
-     * @param name
-     * @param method
-     * @return
-     */
     @Override
     public OutputStream GetOutputStream(String name, CompressionMethod method) {
         ZipParameters params = new ZipParameters();
@@ -75,7 +71,7 @@ public class ZipWriter extends Writer {
         return zos;
     }
     
-    private void Add(String name, InputStream is, CompressionMethod method, int length) {
+    private void Add(String name, InputStream is, CompressionMethod method, long length) {
         ZipParameters params = new ZipParameters();
         params.setCompressionMethod(method);
         if (method==CompressionMethod.STORE) {
@@ -102,6 +98,16 @@ public class ZipWriter extends Writer {
         try {
             zos.close();
         } catch (IOException ex) {
+            Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void Add(String name, File file, CompressionMethod method) {
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            Add(name, fis, method, file.length());
+        } catch (FileNotFoundException ex) {
             Logger.getLogger(ZipWriter.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

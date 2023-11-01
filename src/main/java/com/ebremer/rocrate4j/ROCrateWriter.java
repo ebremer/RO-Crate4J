@@ -1,8 +1,11 @@
 package com.ebremer.rocrate4j;
 
 import static com.ebremer.rocrate4j.ROCrate.MANIFEST;
+import static com.ebremer.rocrate4j.ROCrate.MANIFESTTTL;
 import com.ebremer.rocrate4j.writers.Writer;
+import java.io.File;
 import net.lingala.zip4j.model.enums.CompressionMethod;
+import org.apache.jena.riot.RDFFormat;
 
 /**
  *
@@ -22,12 +25,17 @@ public class ROCrateWriter {
     }
     
     public void close() {
-        destination.Add(MANIFEST, manifest.getManifestBytes(), CompressionMethod.DEFLATE);
+        destination.Add(MANIFEST, manifest.getManifest().getBytes(), CompressionMethod.DEFLATE);
+        destination.Add(MANIFESTTTL, manifest.getManifest(RDFFormat.TRIG_PRETTY).getBytes(), CompressionMethod.DEFLATE);
         destination.close();
     }
     
     public void Add(String name, byte[] bytes, CompressionMethod method) {
         destination.Add(name, bytes, method);
+    }
+    
+    public void Add(String name, File file, CompressionMethod method) {
+        destination.Add(name, file, method);
     }
     
     public Manifest GetManifest() {
