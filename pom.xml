@@ -9,8 +9,8 @@
     
     <licenses>
         <license>
-            <name>MIT License</name>
-            <url>https://opensource.org/license/mit/</url>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
     
@@ -32,14 +32,15 @@
     
     <inceptionYear>2021</inceptionYear>
     
-    <version>0.3.4</version>
+    <version>0.3.5</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <jena.ver>4.9.0</jena.ver>
+        <jena.ver>4.10.0</jena.ver>
         <zip4j.ver>2.11.5</zip4j.ver>
+        <titanium-json-ld.ver>1.3.3</titanium-json-ld.ver>
     </properties>
     <build>
         <plugins>
@@ -57,7 +58,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.jena</groupId>
-            <artifactId>jena-core</artifactId>
+            <artifactId>apache-jena-libs</artifactId>
             <type>pom</type>
             <version>${jena.ver}</version>
             <exclusions>
@@ -68,12 +69,6 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.jena</groupId>
-            <artifactId>jena-querybuilder</artifactId>
-            <version>${jena.ver}</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
             <groupId>net.lingala.zip4j</groupId>
             <artifactId>zip4j</artifactId>
             <version>${zip4j.ver}</version>
@@ -81,7 +76,7 @@
         <dependency>
             <groupId>com.apicatalog</groupId>
             <artifactId>titanium-json-ld</artifactId>
-            <version>1.3.3-SNAPSHOT</version>
+            <version>${titanium-json-ld.ver}</version>
         </dependency>
     </dependencies>
     <repositories>
