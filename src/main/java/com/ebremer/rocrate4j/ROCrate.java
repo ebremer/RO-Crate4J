@@ -51,7 +51,7 @@ public class ROCrate {
         }
                 
         public Resource Add(Resource parent, String base, String name, byte[] bytes, CompressionMethod method, boolean track) {
-            rocwriter.Add(base+"/"+name, bytes, method);
+            rocwriter.Add(base+name, bytes, method);
             return manifest.addFile(parent, name, track);
         }
         

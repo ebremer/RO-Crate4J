@@ -40,6 +40,7 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.riot.RDFParser;
 import org.apache.jena.riot.RDFWriter;
@@ -71,7 +72,7 @@ public class Manifest {
         manifest = ModelFactory.createDefaultModel();
         SetDefaultNameSpaces(manifest);
         rde = manifest.createResource(BASE);
-        manifestIRI = manifest.createResource(rde.toString()+"/"+MANIFEST);
+        manifestIRI = manifest.createResource(rde.toString()+MANIFEST);
         rde.addProperty(RDF.type, SchemaDO.Dataset);
         manifestIRI
             .addProperty(RDF.type, SchemaDO.CreativeWork)
@@ -107,7 +108,7 @@ public class Manifest {
         if (lang.equals(RDFFormat.JSONLD11)) {
             return toJSONLD(manifest);
         } if (lang.equals(RDFFormat.TRIG_PRETTY)) {
-            return toTurtle();
+            return toTurtle(manifest);
         }
         return null;
     }
@@ -167,7 +168,7 @@ public class Manifest {
     }
 
     public Resource addFolder(Resource parent, String name, Resource type) {
-        Resource folder = manifest.createResource(parent.getURI()+"/"+name);
+        Resource folder = manifest.createResource(parent.getURI()+name);
         folder.addProperty(RDF.type, type);
         parent.addProperty(SchemaDO.hasPart, folder);
         return folder;
@@ -182,9 +183,9 @@ public class Manifest {
         return file;
     }
     
-    public String toTurtle() {
+    public String toTurtle(Model meta) {
         Dataset ds = DatasetFactory.createGeneral();
-        ds.getDefaultModel().add(manifest);
+        ds.getDefaultModel().add(meta);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         RDFWriter.create()
             .source(ds)
@@ -200,10 +201,8 @@ public class Manifest {
     }
     
     public String toJSONLD(Model meta) {
-      //  File xz = new File("source.ttl");
         Dataset dsx = DatasetFactory.create();
-        dsx.getDefaultModel().add(meta);
-        
+        dsx.getDefaultModel().add(meta);        
         dsx.getPrefixMapping().removeNsPrefix("dcterms");
         dsx.getPrefixMapping().setNsPrefix("dct", DCTerms.NS);
         dsx.getPrefixMapping().setNsPrefix("rdf", RDF.uri);
@@ -217,11 +216,9 @@ public class Manifest {
         dsx.getPrefixMapping().setNsPrefix("ImageObject", "so:ImageObject");
         dsx.getPrefixMapping().setNsPrefix("object", "so:object");
         dsx.getPrefixMapping().setNsPrefix("name", "so:name");
-        dsx.getPrefixMapping().setNsPrefix("publisher", "so:publisher");
-        
+        dsx.getPrefixMapping().setNsPrefix("publisher", "so:publisher");        
         dsx.getPrefixMapping().setNsPrefix("ScholarlyArticle", "so:ScholarlyArticle");
-        dsx.getPrefixMapping().setNsPrefix("contributor", "so:contributor");
-        
+        dsx.getPrefixMapping().setNsPrefix("contributor", "so:contributor");        
         dsx.getPrefixMapping().setNsPrefix("result", "so:result");
         dsx.getPrefixMapping().setNsPrefix("keywords", "so:keywords");
         dsx.getPrefixMapping().setNsPrefix("datePublished", "so:datePublished");
@@ -231,11 +228,8 @@ public class Manifest {
         dsx.getPrefixMapping().setNsPrefix("height", "exif:height");
         dsx.getPrefixMapping().setNsPrefix("width", "exif:width");
         dsx.getPrefixMapping().setNsPrefix("source", "dc:source");
-        dsx.getPrefixMapping().setNsPrefix("member", "rdfs:member");
-       
-        dsx.getPrefixMapping().setNsPrefix("type", "rdf:type");
-
-        
+        dsx.getPrefixMapping().setNsPrefix("member", "rdfs:member");       
+        dsx.getPrefixMapping().setNsPrefix("type", "rdf:type");        
         dsx.getPrefixMapping().setNsPrefix("Dataset", "void:Dataset");
         dsx.getPrefixMapping().setNsPrefix("classPartition", "void:classPartition");
         dsx.getPrefixMapping().setNsPrefix("class", "void:class");
@@ -246,16 +240,14 @@ public class Manifest {
         dsx.getPrefixMapping().setNsPrefix("property", "void:property");
         dsx.getPrefixMapping().setNsPrefix("propertyPartition", "void:propertyPartition");
         dsx.getPrefixMapping().setNsPrefix("triples", "void:triples");
-        dsx.getPrefixMapping().setNsPrefix("subset", "void:subset");
-        
+        dsx.getPrefixMapping().setNsPrefix("subset", "void:subset");        
         dsx.getPrefixMapping().setNsPrefix("BeakGraph", "hal:BeakGraph");
         dsx.getPrefixMapping().setNsPrefix("Segmentation", "hal:Segmentation");
         dsx.getPrefixMapping().setNsPrefix("hasProbability", "hal:hasProbability");
         dsx.getPrefixMapping().setNsPrefix("classification", "hal:classification");
         dsx.getPrefixMapping().setNsPrefix("tileSizeX", "hal:tileSizeX");
         dsx.getPrefixMapping().setNsPrefix("tileSizeY", "hal:tileSizeY");
-        
-        
+                
         DatasetGraph dsg = dsx.asDatasetGraph();
         RdfDataset ds = JenaTitanium.convert(dsg);
         Document doc = RdfDocument.of(ds);
@@ -320,7 +312,7 @@ public class Manifest {
         ) {
             writer.write(x);
             String pre =  new String(os.toByteArray(), StandardCharsets.UTF_8);
-            pre = pre.replaceAll(BASE, ".");
+            pre = pre.replaceAll(BASE, "./");
             return pre;
         } catch (IOException ex) {
             Logger.getLogger(Manifest.class.getName()).log(Level.SEVERE, null, ex);
@@ -331,7 +323,7 @@ public class Manifest {
     public static void main(String[] args) throws FileNotFoundException {
         Manifest man = new Manifest();
         Model m = ModelFactory.createDefaultModel();
-        File x = new File("source.ttl");
+        File x = new File("source2.ttl");
         RDFParser.create()
             .base(BASE)
             .source(new FileInputStream(x))
@@ -341,5 +333,7 @@ public class Manifest {
         m.setNsPrefix("", "file:///D:/projects/RO-Crate4J/");
         
         System.out.println(man.toJSONLD(m));
+        System.out.println("======================================================");
+        System.out.println(man.toTurtle(m));
     }
 }

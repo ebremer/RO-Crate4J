@@ -5,6 +5,8 @@ import static com.ebremer.rocrate4j.ROCrate.MANIFESTTTL;
 import com.ebremer.rocrate4j.writers.Writer;
 import java.io.File;
 import net.lingala.zip4j.model.enums.CompressionMethod;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 
 /**
@@ -25,6 +27,9 @@ public class ROCrateWriter {
     }
     
     public void close() {
+        //System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        //RDFDataMgr.write(System.out, manifest.getManifestModel(), Lang.TURTLE);
+        //System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         destination.Add(MANIFEST, manifest.getManifest().getBytes(), CompressionMethod.DEFLATE);
         destination.Add(MANIFESTTTL, manifest.getManifest(RDFFormat.TRIG_PRETTY).getBytes(), CompressionMethod.DEFLATE);
         destination.close();

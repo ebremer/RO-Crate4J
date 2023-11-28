@@ -1,0 +1,150 @@
+@prefix bg:      <https://www.ebremer.com/beakgraph/ns/> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix exif:    <http://www.w3.org/2003/12/exif/ns#> .
+@prefix geo:     <http://www.opengis.net/ont/geosparql#> .
+@prefix hal:     <https://www.ebremer.com/halcyon/ns/> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sno:     <http://snomed.info/id/> .
+@prefix so:      <https://schema.org/> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix xmls:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:md5:a923c8367e61792f531e65d966d4cb78>
+        a            so:ImageObject;
+        exif:height  "82984"^^xsd:int;
+        exif:width   "112231"^^xsd:int .
+
+<http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon>
+        a           bg:BeakGraph;
+        so:hasPart  <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/4d107d50-d88b-4dde-8381-fd940f57dc00.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/namedgraphs.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/b55878fc-63d0-41f0-9dbf-2a4257767517.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/7f2b2cf5-488b-4155-a1e5-a9dd0df150a2.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/a2acf24e-5861-44a3-b826-6ad586f75572.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/12579b84-1c28-4ac1-b9d2-2a543b006eb5.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/09a66c01-d6e1-4af2-9f6e-7fd51339c2c5.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/9427ea70-a3bc-4912-95fd-373fa0111db2.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/975ca0ff-be89-4743-a85c-58c355e5ea02.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/e921f78d-4df8-4047-b079-0c1cc53119c9.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/2ebbbd35-dd8a-43ba-a690-f6265419e54f.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/a44e63bb-7ab4-478a-964b-8557781500e9.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/bfba59c2-f1dd-4ccc-988d-f503538ec446.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/a6dfa0ca-3f2f-4814-abd1-6012a7c86b3f.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/dictionary.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/3f4bfd56-3c28-4342-9b5f-44307fa8f7ff.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/ba0a5d05-d0d6-44e0-8036-b63a0ffb5c01.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/91f8c827-a809-449e-add6-5b685a3e69c2.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/ea699406-7b41-4099-8544-29395594d9ff.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/d6ec277c-97bd-486a-b334-44e46db09c57.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/f1e02bd0-1c01-4586-8922-27a0d93af193.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/57c512f1-c399-490e-aaa7-163f755aa6e0.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/e9988fa1-deb8-409a-9073-5c4332a37a3c.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/011ee646-0054-4d94-b9b4-aa8eeb5c56ad.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/75b5639a-8b86-4d17-9b9c-d5509ad96112.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/74ede773-699c-45b8-80f7-a4e38dead2e9.arrow> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon/ae07ca7f-3be2-434c-a10b-0376c81df8d7.arrow> .
+
+<http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/>
+        a                    so:Dataset;
+        so:ScholarlyArticle  "https://doi.org/10.1038/s41597-020-0528-1";
+        so:datePublished     "2023-11-08T20:57:01.215546600Z"^^xsd:dateTime;
+        so:description       "Nuclear segmentation of TCGA cancer types";
+        so:hasPart           <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/void> , <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon>;
+        so:hasPart           [ a                      geo:FeatureCollection;
+                               rdfs:member            <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon>;
+                               dc:creator             "http://orcid.org/0000-0003-0223-1059";
+                               dc:date                "2023-11-08T20:57:01.215546600Z"^^xsd:dateTime;
+                               dc:description         "Nuclear segmentation of TCGA cancer types";
+                               dc:publisher           <https://ror.org/01882y777> , <https://ror.org/05qghxh33>;
+                               dc:references          "https://doi.org/10.1038/s41597-020-0528-1";
+                               dc:title               "cnn-nuclear-segmentations-2019";
+                               prov:wasGeneratedBy    [ a                       prov:Activity;
+                                                        prov:used               <urn:md5:a923c8367e61792f531e65d966d4cb78>;
+                                                        prov:wasAssociatedWith  <https://github.com/SBU-BMI/quip_cnn_segmentation/releases/tag/v1.1>
+                                                      ];
+                               hal:hasClassification  sno:48512009
+                             ];
+        so:name              "cnn-nuclear-segmentations-2019";
+        so:publisher         <https://ror.org/05qghxh33> , <https://ror.org/01882y777> .
+
+<http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com//ro-crate-metadata.json>
+        a              so:CreativeWork;
+        dc:conformsTo  <https://w3id.org/ro/crate/1.1>;
+        so:about       <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/> .
+
+<http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/void>
+        a                       void:Dataset;
+        void:classPartition     [ void:class     geo:FeatureCollection;
+                                  void:entities  "1"^^xsd:long
+                                ];
+        void:classPartition     [ void:class     geo:Feature;
+                                  void:entities  "9"^^xsd:long
+                                ];
+        void:classPartition     [ void:class     prov:Activity;
+                                  void:entities  "1"^^xsd:long
+                                ];
+        void:classPartition     [ void:class     so:ImageObject;
+                                  void:entities  "1"^^xsd:long
+                                ];
+        void:classPartition     [ void:class     hal:Segmentation;
+                                  void:entities  "1"^^xsd:long
+                                ];
+        void:classPartition     [ void:class     hal:Grid;
+                                  void:entities  "1"^^xsd:long
+                                ];
+        void:classPartition     [ void:class     sno:48512009;
+                                  void:entities  "9"^^xsd:long
+                                ];
+        void:classes            "7"^^xsd:long;
+        void:distinctObjects    "39"^^xsd:long;
+        void:distinctSubjects   "41"^^xsd:long;
+        void:properties         "23"^^xsd:long;
+        void:propertyPartition  [ void:property  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>;
+                                  void:triples   "23"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  prov:wasGeneratedBy;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  geo:asWKT;
+                                  void:triples   "51"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  dc:creator;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  prov:used;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  prov:wasAssociatedWith;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  exif:height;
+                                  void:triples   "11"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  dc:description;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  dc:title;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  dc:publisher;
+                                  void:triples   "2"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  geo:hasGeometry;
+                                  void:triples   "51"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:hasProbability;
+                                  void:triples   "9"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:classification;
+                                  void:triples   "9"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:tileSizeY;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  exif:width;
+                                  void:triples   "11"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  geo:hasPerimeterLength;
+                                  void:triples   "9"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:scaleIndex;
+                                  void:triples   "9"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  geo:hasArea;
+                                  void:triples   "9"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:scale;
+                                  void:triples   "9"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:tileSizeX;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  dc:references;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  dc:date;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:propertyPartition  [ void:property  hal:hasClassification;
+                                  void:triples   "1"^^xsd:long
+                                ];
+        void:subset             <http://c5f2872e-daa5-4412-9b8f-040d1f20c5b5.com/halcyon>;
+        void:triples            "214"^^xsd:long .
