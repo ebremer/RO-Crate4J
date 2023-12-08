@@ -96,7 +96,7 @@ public class Manifest {
         m.setNsPrefix("rdfs", RDFS.uri);
         m.setNsPrefix("void", VOID.NS);
         m.setNsPrefix("dcterms", DCTerms.NS);
-        m.setNsPrefix("hal", "https://www.ebremer.com/halcyon/ns/");
+        m.setNsPrefix("hal", "https://halcyon.is/ns/");
         m.setNsPrefix("exif", "http://www.w3.org/2003/12/exif/ns#");
     }
 
