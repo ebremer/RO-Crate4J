@@ -40,7 +40,6 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.riot.RDFParser;
 import org.apache.jena.riot.RDFWriter;
@@ -283,7 +282,7 @@ public class Manifest {
         neocontext.add("creator", Json.createObjectBuilder().add(Keywords.ID, "dct:creator").add(Keywords.TYPE, Keywords.ID));
         neocontext.add("publisher", Json.createObjectBuilder().add(Keywords.ID, "so:publisher").add(Keywords.TYPE, Keywords.ID));
         neocontext.add("dct:publisher", Json.createObjectBuilder().add(Keywords.ID, "dct:publisher").add(Keywords.TYPE, Keywords.ID));
-        neocontext.add("hasClassification", Json.createObjectBuilder().add(Keywords.ID, "hal:hasClassification").add(Keywords.TYPE, Keywords.ID));
+        neocontext.add("classification", Json.createObjectBuilder().add(Keywords.ID, "hal:classification").add(Keywords.TYPE, Keywords.ID));
         cxt.add(Keywords.CONTEXT, neocontext);
         cxt.add(Keywords.EMBED, Keywords.ALWAYS);
         cxt.add(Keywords.EXPLICIT, false);

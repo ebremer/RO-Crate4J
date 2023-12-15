@@ -5,8 +5,6 @@ import static com.ebremer.rocrate4j.ROCrate.MANIFESTTTL;
 import com.ebremer.rocrate4j.writers.Writer;
 import java.io.File;
 import net.lingala.zip4j.model.enums.CompressionMethod;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 
 /**
