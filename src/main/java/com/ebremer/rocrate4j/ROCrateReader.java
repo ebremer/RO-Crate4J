@@ -23,6 +23,8 @@ import org.apache.jena.query.ParameterizedSparqlString;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.system.JenaTitanium;
+import org.apache.jena.riot.system.ParserProfileStd;
+import org.apache.jena.riot.system.RiotLib;
 import org.apache.jena.sparql.core.DatasetGraph;
 import org.apache.jena.update.UpdateAction;
 import org.apache.jena.update.UpdateFactory;
@@ -105,7 +107,7 @@ public final class ROCrateReader implements AutoCloseable {
             options.setProcessingMode(JsonLdVersion.V1_1);
             options.setCompactToRelative(true);
             RdfDataset rdf = JsonLd.toRdf(document).options(options).get();
-            DatasetGraph dsg = JenaTitanium.convert(rdf);
+            DatasetGraph dsg = JenaTitanium.convert(rdf,RiotLib.dftProfile());
             Graph gg = dsg.getDefaultGraph();
             m = ModelFactory.createModelForGraph(gg);
         } catch (JsonLdError ex) {
